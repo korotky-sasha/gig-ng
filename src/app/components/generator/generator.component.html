@@ -1,0 +1,23 @@
+<button (click)="goToPayments()">Go to payments</button>
+<div class="row space-around">
+  <label>
+    Character
+    <input type="text" (input)="setLetter($event)" pattern="[a-z]?" placeholder="Character">
+  </label>
+  <div class="timer">{{time$ | async}} s</div>
+  <button (click)="startGeneration()">Generate 2D grid</button>
+</div>
+<div class="grid">
+  <div *ngFor="let row of grid" class="row">
+    <div *ngFor="let cell of row" class="col">
+      <span class="cell">{{cell}}</span>
+    </div>
+  </div>
+</div>
+<div *ngIf="code$ | async" class="row">
+  <div class="center row">
+    <span class="dot"></span>
+    <span class="bold">Live</span>
+  </div>
+</div>
+<div *ngIf="code$ | async as code" class="row"><span class="cell center">Your code: {{code}}</span></div>

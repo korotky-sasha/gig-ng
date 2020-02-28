@@ -1,0 +1,50 @@
+.bold {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cell {
+  min-width: 20px;
+  min-height: 20px;
+  border: 1px solid black;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 25px;
+}
+
+.dot {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  background: red;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.table {
+  display: table;
+  min-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  th {
+    border: 1px solid black;
+  }
+  td {
+    border: 1px solid black;
+  }
+}

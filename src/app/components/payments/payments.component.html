@@ -1,0 +1,35 @@
+<button (click)="goToGenerator()">Go to generator</button>
+<div *ngIf="code$ | async" class="row">
+  <div class="center row">
+    <span class="dot"></span>
+    <span class="bold">Live</span>
+  </div>
+</div>
+<div *ngIf="code$ | async as code" class="row"><span class="cell center">Your code: {{code}}</span></div>
+<div>
+  <form [formGroup]="form" (ngSubmit)="addPayment()">
+    <label>
+      Payment
+      <input type="text" formControlName="name">
+    </label>
+    <label>
+      Amount
+      <input type="number" formControlName="amount">
+    </label>
+    <button type="submit" [disabled]="!form.valid || !code">+ ADD</button>
+  </form>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Code</th>
+      <th>Grid</th>
+    </tr>
+    <tr *ngFor="let payment of payments$ | async">
+      <td>{{payment.name}}</td>
+      <td>{{payment.amount}}</td>
+      <td>{{payment.code}}</td>
+      <td>{{100}}</td>
+    </tr>
+  </table>
+</div>
